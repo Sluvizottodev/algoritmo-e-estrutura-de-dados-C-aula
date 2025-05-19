@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 void moveDisks (int n, char source, char dest, char aux){
     if(n == 1){
         printf("Mova o disco 1 de %c para %c\n", source, dest);
