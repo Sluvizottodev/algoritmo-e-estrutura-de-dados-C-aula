@@ -1,0 +1,9 @@
+Pior caso: O(n²)
+Melhor caso: O(n²)
+
+O Bubble Sort tem dois laços:
+    - O primeiro laço i roda até n - 1.
+    - O segundo laço j roda até n - 1 - i.
+
+O algoritmo precisa comparar e trocar todos os pares de elementos possíveis,
+resultando em cerca de n × n operações, por isso, complexidade O(n²).

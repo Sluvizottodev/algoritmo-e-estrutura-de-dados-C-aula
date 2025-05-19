@@ -1,0 +1,17 @@
+1. criarPilha -> complexidade: O(1);
+    Apenas incializa os valores da pilha. Sem laços e repetições.
+
+2. buscarNaPilha -> complexidade: O(n);
+    Percorre toda a pilha a procura do valor, vai depender do número.
+
+3. inserirNaPilha -> complexidade: O(n);
+    Chama buscarNaPilha que é O(n) e dps insere um valor no fim (O(1)).
+
+4. excluirDaPilha -> complexidade: O(1);
+    Só diminui o tamanho da pilha.
+
+5. eliminarPilha -> complexidade: O(1);
+    Apenas libera a memória com free e zera tamanho.
+
+6. imprimirPilha -> complexidade: O(n);
+    Percorre todos os elementos da pilha para imprimir.
