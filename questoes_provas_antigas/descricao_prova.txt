@@ -1,0 +1,71 @@
+Descrição:
+Você dispõe da seguinte listagem de código:
+
+#include <stdlib.h>
+#include <stdio.h>
+struct _TPilha_ {
+    int * valores;
+    int tamanho;
+};
+typedef _TPilha_ TPilha;
+
+void criarPilha (TPilha *p);
+int buscarNaPilha (TPilha p, int x);
+int inserirNaPilha (TPilha *p, int x);
+int excluirDaPilha (TPilha *p);
+void eliminarPilha (TPilha *p);
+void imprimirPilha (TPilha p);
+
+void criarPilha(TPilha *p){
+    (*p).valores = NULL;
+    (*p).tamanho = 0;
+}
+
+int buscarNaPilha(TPilha p, int x){
+    int i, busca;
+    busca = -1; //flag para erro
+    for (i=0; i <= p.tamanho-1; i = i + 1)
+        if (p.valores[i] == x){
+            busca = i;
+            break;
+        }
+    return busca;
+}
+void eliminarPilha(TPilha *p){
+    (*p).tamanho = 0;
+    free((*p).valores);
+    (*p).valores = NULL;
+}
+
+void imprimirPilha(TPilha p){
+    int i;
+    for(i = 0; i < p.tamanho; i++)
+        printf("%d ", p.valores[i]);
+}
+
+Repare que o tipo TPilha registra como dados de uma pilha, um ponteiro para uma coleção de valores inteiros e
+o tamanho dessa coleção. A função criarPilha “aterra” esse ponteiro e determina que o tamanho da coleção dos
+valores apontados é igual a zero. Em contrapartida, a função eliminarPilha ajusta o tamanho da pilha em
+questão para zero, libera todo o espaço de memória já alocado para os valores armazenados na pilha e,
+finalmente, “aterra” o ponteiro para essa coleção.
+Em prosseguimento, você deve conhecer duas funções muito usadas para a manipulação de memória. A
+primeira delas é a função malloc. Essa função é responsável por alocar uma área de memória e tem a seguinte
+sintaxe:
+
+id = (tipo *)malloc(sizeof(tipo));
+onde id é uma variável apontadora (ou um campo apontador de um tipo de registro) e tipo é o tipo de um dado
+que será apontado por tal variável (ou campo de um tipo de registro).
+A segunda função é a função realloc. Essa função altera o espaço de memória que está sendo apontado por um
+ponteiro. Sua sintaxe é:
+id = realloc(id, novoTamanho);
+onde id é um ponteiro que já aponta para uma área de memória e novoTamanho será o novo tamanho dessa
+área de memória apontada por id.
+1) (2,5 pontos) Implemente a função inserirNaPilha. Essa função deve inserir o elemento x na pilha, apenas se o
+mesmo ainda não estiver nela presente.
+2) (2,5 pontos) Implemente a função excluirNaPilha. Essa função deve excluir um elemento da pilha, apenas se
+ela não encontrar-se vazia.
+3) Determine e (2,0 pontos) justifique a complexidade de todas as 6 (seis) funções cujas assinaturas foram
+apresentadas nas linhas de código acima.
+4) (2,0 pontos) Implemente o algoritmo de ordenação conhecido como Bubble Sort.
+5) Determine e (1,0 ponto) justifique a complexidade do algoritmo Bubble Sort, em consonância com a
+implementação solicitada na questão anterior.
