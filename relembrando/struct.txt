@@ -1,0 +1,55 @@
+#   O que é uma struct em C?
+A struct (estrutura) serve para agrupar diferentes variáveis em um único tipo. 
+Isso é útil quando queremos representar um objeto ou conjunto de dados relacionados, como uma pilha.
+
+##  O que representa esta struct?
+
+struct _TPilha_ {
+    int *valores;
+    int tamanho;
+};
+
+Essa estrutura define uma pilha que guarda números inteiros (int). Vamos entender cada parte:
+
+Campo   |	Tipo    |   Explicação
+----------------------------------------------------------------------------------------------------
+valores |   int *   |	É um ponteiro para um vetor de inteiros. Ele guarda os elementos da pilha.
+tamanho |	int     |	Diz quantos elementos tem atualmente na pilha.
+
+##  Como ela funciona em pilhas?
+Uma pilha funciona com o princípio LIFO (Last In, First Out) — o último a entrar é o primeiro a sair.
+
+Com essa struct, podemos:
+
+Empilhar (push): adicionar um número no topo.
+Adicionamos o valor em valores[tamanho] e aumentamos tamanho.
+Desempilhar (pop): remover o topo.
+Só diminuímos tamanho (não precisa apagar o valor, pois ele será sobrescrito depois).
+Consultar o topo: ver o último valor inserido:
+valores[tamanho - 1].
+
+### Exemplo prático de uso:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct _TPilha_ {
+    int *valores;
+    int tamanho;
+};
+
+void inicializaPilha(struct _TPilha_ *p) {
+    p->valores = malloc(100 * sizeof(int)); // cria espaço para 100 inteiros
+    p->tamanho = 0; // começa vazia
+}
+
+void empilhar(struct _TPilha_ *p, int x) {
+    p->valores[p->tamanho] = x;
+    p->tamanho++;
+}
+
+int desempilhar(struct _TPilha_ *p) {
+    if (p->tamanho == 0) return -1; // erro: pilha vazia
+    p->tamanho--;
+    return p->valores[p->tamanho];
+}
