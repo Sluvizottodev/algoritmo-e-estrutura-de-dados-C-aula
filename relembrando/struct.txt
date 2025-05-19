@@ -30,9 +30,6 @@ valores[tamanho - 1].
 
 ### Exemplo prático de uso:
 
-#include <stdio.h>
-#include <stdlib.h>
-
 struct _TPilha_ {
     int *valores;
     int tamanho;
