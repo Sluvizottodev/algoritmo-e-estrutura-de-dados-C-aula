@@ -1,4 +1,8 @@
 /*Quick Sort — rápido e eficiente
+Imagine que você está organizando seus livros por altura. 
+Você escolhe um livro como referência (o pivô), separa os menores para um lado e os maiores para o outro. 
+Depois faz o mesmo com cada grupo. É como dividir para conquistar rapidamente.
+
 Ideia:
 Escolhe um pivô, coloca todos menores à esquerda e maiores à direita, e repete isso nas partes menores.
 
