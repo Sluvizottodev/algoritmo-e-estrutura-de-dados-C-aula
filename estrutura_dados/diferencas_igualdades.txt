@@ -1,0 +1,45 @@
+Resumo: Diferenças e Igualdades entre Fila e Pilha em C
+
+1. Definição
+======================
+- Fila (Queue): Estrutura de dados do tipo FIFO (First-In, First-Out), onde o primeiro elemento inserido é o primeiro a ser removido.
+- Pilha (Stack): Estrutura de dados do tipo LIFO (Last-In, First-Out), onde o último elemento inserido é o primeiro a ser removido.
+
+======================
+2. Principais Diferenças
+======================
+- Índices:
+  - Fila usa dois índices: "inicio" (remoção) e "fim" (inserção).
+  - Pilha usa apenas um índice: "topo".
+
+- Inserção:
+  - Fila: elementos são inseridos no final (fim++).
+  - Pilha: elementos são inseridos no topo (topo++).
+
+- Remoção:
+  - Fila: elementos são removidos do início (inicio++).
+  - Pilha: elementos são removidos do topo (topo--).
+
+- Ordem:
+  - Fila: Primeiro entra, primeiro sai.
+  - Pilha: Último entra, primeiro sai.
+
+======================
+3. Semelhanças
+======================
+- Ambas utilizam vetores (arrays) para armazenar os dados.
+- Ambas usam estrutura `struct` em C para organizar os dados e os índices.
+- Ambas implementam funções de inserção, remoção, verificação de cheio e vazio.
+- O controle de tamanho é feito de forma similar usando limites do vetor.
+
+======================
+4. Reutilização de Código
+======================
+Pode ser reaproveitado:
+  - Declaração do vetor (dados[])
+  - Funções de verificação (cheio/vazio)
+  - Estrutura básica da struct
+
+Deve ser adaptado:
+  - Lógica de inserção/remoção
+  - Controles de índice (inicio/fim para fila, topo para pilha)
