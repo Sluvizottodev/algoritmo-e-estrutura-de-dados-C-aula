@@ -1,3 +1,4 @@
+#include <cstddef>
 int excluir_fila(No* sentinela){
     No* primeiro = sentinela->proximo; 
     if(primeiro == NULL){
